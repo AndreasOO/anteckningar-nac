@@ -1,0 +1,19 @@
+Det går att använda två sätt att jämföra strängar -
+1) alfabetisk - alfabetiskt ordning.
+
+2) genom lokal känslighet (local sensitivity) - java använder språkinställningarna i datorn som exekverar koden.
+
+Collator col = Collator.getInstance();
+col.setStrength(Collator.PRIMARY);
+
+String s1 = "a";
+String s2 = "b";
+
+Locale.setDefault(Locale.of("sv", "SE"));
+col.compare(s1,s1); // jämför med lokal känslighet enligt svensk språkinställning
+
+s1.compareTo(s2) // jämför alfabetiskt utan känslighet för lokala språkinställningar
+
+--------------------
+
+

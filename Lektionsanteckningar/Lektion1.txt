@@ -1,0 +1,21 @@
+JiT - Just in Time: Java kompilerar det viktigaste först, och kompilerar vissa delar av koden endast när den behöver det.
+Det är detta som ibland gör att vi får runtime errors.
+
+Deklaration --> int num;
+Tilldelningssats --> num = 12;
+Initiering --> int num = 12;
+
+new Scanner(System.in) // Scanner tar in ett argument som ska vara källan för input,.
+Scanner.nextLine() // läser nuvarande rad och hoppar till nästa, redo att köra.
+Scanner.next() // läser nuvarande ord och hoppar fram till nästa ord, dvs fram till nästa karaktär som inte är whitespace.
+
+-- OBS -- Om du tänker använda nextLine() efter next() eller nextInt()/nextDouble() så bör du göra en extra nextLine()
+innan du gör den nextLine() som tilldelar variabelvärde. Så att den inte försöker scanna slutet på raden som den står på.
+
+
+System.getProperty("user.name") // returnerar användarnamnet på den som är inloggad på operativsystemet.
+System.getProperty("os.name") // returnerar namnet på operativsystemet som används.
+
+
+
+

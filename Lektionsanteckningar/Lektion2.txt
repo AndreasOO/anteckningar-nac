@@ -1,0 +1,58 @@
+Exempel på try with resources med en BufferedReader:
+
+try (BufferedReader reader = new BufferedReader(new FileReader("Lektionsanteckningar/Lektion2.txt"))) {
+            String line = reader.readLine();
+
+            while (line != null) {
+                System.out.println(line);
+                line = reader.readLine();
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+---------------------
+
+Du kan kedja catch block genom att skriva dem efter varandra. De gås igenom i turordning, och om ett exception fångas
+så skippas de andra under.
+
+
+        } catch (IllegalArgumentException e) {
+                    System.out.println(e.getMessage());
+        }
+
+        } catch (DivisionByZeroException e) {
+                    System.out.println(e.getMessage());
+        }
+
+        } catch (Exception e) {
+                    System.out.println(e.getMessage());
+        }
+
+-----------------------
+
+Du kan enkelt runda av till x antal decimaler genom mönstret Math.round(decimaltal*100)/100
+--> 100 blir rundning till två decimaler, lägg till fler nollor för mer precision.
+
+        double d1 = 1.123456;
+        double d2 = Math.round(d1*100000)/100000.0;
+           --> d1 = 1.123456
+           --> d1*100000 = 112345.6
+           --> Math.round(112345.6) = 112346.0
+           --> 112346.0 / 100000.0 = 1.12346
+
+När du sedan skriver ut decimaltalet så behöver du använda String.format("%f.x") där x är antal decimaltecken.
+       String.format("%.5f", d2)
+       --> d2 = 1.12346
+       --> %.5f = "1.12346"
+
+Om fler decimaltecken skrivs i än vad flyttalet innehåller så ersätts de med 0.
+       String.format("%.7f", d2)
+       --> d2 = 1.12346
+       --> %.7f = "1.1234600"
+
+Om färre decimaltecken skrivs i än vad flyttalet innehåller avrundas decimaltalet enligt Math.round().
+       String.format("%.4f", d2)
+       --> d2 = 1.12346
+       --> %.4f = "1.1235"

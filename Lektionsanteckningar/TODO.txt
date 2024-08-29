@@ -1,0 +1,9 @@
+TODO: Självstudier på nackademinportalen - under Kurs -> Självstudier
+TODO: Gör programmeringsuppgifter från kapitel 4
+
+
+
+Done: Gör Intellij Learn -> Välj Close Project, och gör intelliJ kursen inom IDEn.
+Done: Gör programmeringsuppgifter från kapitel 3
+Done: Gör grundläggande uppgifter från boken kapitel 1 & 2.
+Done: Läs kapitel 1 i boken
