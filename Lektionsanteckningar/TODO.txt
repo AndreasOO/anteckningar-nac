@@ -1,5 +1,8 @@
 TODO: Självstudier på nackademinportalen - under Kurs -> Självstudier
 TODO: Gör programmeringsuppgifter från kapitel 4
+TODO: Skriv rent kortkommandon för IntelliJ
+
+
 
 
 
