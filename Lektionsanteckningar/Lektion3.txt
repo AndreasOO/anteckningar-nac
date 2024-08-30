@@ -32,3 +32,22 @@ Math.random är inte kryptografiskt säker.
 Random rand = new Random();
 rand.nextInt(100); genererar en integer mellan 0 och 100.
 Bättre kryptografisk säkerhet
+
+
+-------------------
+
+Switch uttryck kan numera förenklas med -> syntaxen. Pilen ersätter kolon : och det blir implicit ett break efter uttrycket
+eller kodblocket efter den.
+
+int num = 3;
+int res;
+
+switch (num) {
+    case 0 -> res = 0;
+    case 1 -> res = 1;
+    case 2 -> res = 2;
+    case 3 -> res = 3;
+    default -> { System.out.println("Någonting gick fel");
+                throw new IllegalArgumentException();
+               }
+}

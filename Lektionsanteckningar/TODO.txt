@@ -1,7 +1,7 @@
 TODO: Självstudier på nackademinportalen - under Kurs -> Självstudier
 TODO: Gör programmeringsuppgifter från kapitel 4
 TODO: Skriv rent kortkommandon för IntelliJ
-
+TODO: Programmeringsuppgift 4.5 i boken - lär dig Math.cos() och dokumentera jämförelse av flyttal.
 
 
 
