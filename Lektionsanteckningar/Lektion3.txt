@@ -16,4 +16,6 @@ s1.compareTo(s2) // jämför alfabetiskt utan känslighet för lokala språkinst
 
 --------------------
 
+Man kan även ställa in lokal känslighet som argument i String.format.
 
+String.format(Locale.of("sv", "SE"), "%.2f", costPerMonth); // Kommer använda svensk standard för decimaltecken.
