@@ -19,3 +19,16 @@ s1.compareTo(s2) // jämför alfabetiskt utan känslighet för lokala språkinst
 Man kan även ställa in lokal känslighet som argument i String.format.
 
 String.format(Locale.of("sv", "SE"), "%.2f", costPerMonth); // Kommer använda svensk standard för decimaltecken.
+
+
+-------------------
+
+Randomisering i Java
+
+Math.random() // genererar ett flyttal mellan 0.00 och 1.00
+(int) (Math.random()*100) // genererar en integer mellan 0 och 100 - notera parenteserna.
+Math.random är inte kryptografiskt säker.
+
+Random rand = new Random();
+rand.nextInt(100); genererar en integer mellan 0 och 100.
+Bättre kryptografisk säkerhet
