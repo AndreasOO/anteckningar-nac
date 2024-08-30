@@ -15,10 +15,12 @@ public class Lektioner {
 
 //        PhoneBillCalculator phoneBillCalculator = new PhoneBillCalculator();
 //        phoneBillCalculator.execute();
+//
+//        GymTicketCalculator gtc = new GymTicketCalculator();
+//        gtc.execute();
 
-        GymTicketCalculator gtc = new GymTicketCalculator();
-        gtc.execute();
-
+        MathTestGrader mathTestGrader = new MathTestGrader();
+        mathTestGrader.execute();
 
     }
 
