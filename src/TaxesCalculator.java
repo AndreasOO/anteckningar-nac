@@ -4,7 +4,7 @@ public class TaxesCalculator {
     private final int TAXES_PERCENTAGE = 25;
     private double priceWithoutTaxes;
     private double taxesPaid;
-    private double UserInputPrice;
+    private double userInputPrice;
 
     public TaxesCalculator() {
 
@@ -18,15 +18,15 @@ public class TaxesCalculator {
     }
 
     private void getUserInput() {
-        UserInputPrice = Double.parseDouble(JOptionPane.showInputDialog("Ange pris: "));
+        userInputPrice = Double.parseDouble(JOptionPane.showInputDialog("Ange pris: "));
     }
 
     private void calculateTaxesPaid() {
-        taxesPaid = (TAXES_PERCENTAGE/100.0)*UserInputPrice;
+        taxesPaid = (TAXES_PERCENTAGE/100.0)*userInputPrice;
     }
 
     private void calculatePriceWithoutTaxes() {
-        priceWithoutTaxes = UserInputPrice-taxesPaid;
+        priceWithoutTaxes = userInputPrice-taxesPaid;
     }
 
     private void printOutputToUser() {
