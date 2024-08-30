@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Lektioner {
@@ -13,9 +14,6 @@ public class Lektioner {
 
         PhoneBillCalculator phoneBillCalculator = new PhoneBillCalculator();
         phoneBillCalculator.execute();
-
-
-
 
     }
 
