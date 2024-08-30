@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Calendar;
 import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
@@ -12,11 +13,14 @@ public class Lektioner {
 //        TaxesCalculator taxesCalculator  = new TaxesCalculator();
 //        taxesCalculator.execute();
 
-        PhoneBillCalculator phoneBillCalculator = new PhoneBillCalculator();
-        phoneBillCalculator.execute();
+//        PhoneBillCalculator phoneBillCalculator = new PhoneBillCalculator();
+//        phoneBillCalculator.execute();
+
+        GymTicketCalculator gtc = new GymTicketCalculator();
+        gtc.execute();
+
 
     }
-
 
 
 }
