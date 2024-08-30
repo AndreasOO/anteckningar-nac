@@ -7,14 +7,15 @@ import java.util.Scanner;
 
 public class Lektioner {
 
-
-
-    Lektioner() {
-    }
-
     public static void main(String[] args) {
-        TaxesCalculator taxesCalculator  = new TaxesCalculator();
-        taxesCalculator.execute();
+//        TaxesCalculator taxesCalculator  = new TaxesCalculator();
+//        taxesCalculator.execute();
+
+        PhoneBillCalculator phoneBillCalculator = new PhoneBillCalculator();
+        phoneBillCalculator.execute();
+
+
+
 
     }
 
