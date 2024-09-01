@@ -32,6 +32,21 @@ så skippas de andra under.
 
 -----------------------
 
+Felsignaler (Exceptions) kommer i två former.
+
+Kontrollerade fel (Checked Exceptions) - dessa kräver explicit hantering i koden antingen genom throws eller catch.
+Om man inte deklarerar felhantering av kontrollerade fel så kompilerar inte koden.
+
+Okontrollerade fel (Unchecked Exceptions) - dessa kräver ingen explicit hantering i koden men de kan då
+generera felsignal vid exekvering (runtime exception).
+
+Exempel - Scanner.nextInt() kan generera två okontrollerade fel:
+- InputMismatchException  // input innehåller tecken som inte är tal
+- NoSuchElementsException // användare har valt att avsluta/slut på fil (t.e.x ctrl + D i linux - EoF).
+
+
+----------------------
+
 Du kan enkelt runda av till x antal decimaler genom mönstret Math.round(decimaltal*100)/100
 --> 100 blir rundning till två decimaler, lägg till fler nollor för mer precision.
 

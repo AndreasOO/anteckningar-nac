@@ -51,3 +51,23 @@ switch (num) {
                 throw new IllegalArgumentException();
                }
 }
+
+--------------
+
+För jämförelse av double tal så bör inte == användas direkt.
+
+Istället så räknar man ut differensen mellan talen och jämför differensen med epsilon, dvs den godtagbara avvikelsen.
+
+double a = 10.0
+double b = 9.9999999999 // felmarginal på 10^-10
+
+double epsilon = 0.000000001 // godtagbar avvikelse 10^-9;
+double diffAB = Math.abs(a-b); // generar 10^-10 (dvs 0.0000000001)
+
+boolean isEqual = diffAb < epsilon // 0.0000000001 < 0.000000001 - epsilon är ett decimalsteg större, dvs differensen har inte överskridit epsilons gräns för försumbar differens.
+
+Det går även att använda Double.compare(double a, double b) == 0. Default epsilon för denna metod är 10^-15
+
+boolean isEqual = Double.compare(a,b) // true eftersom felmarginal är på 10^-10 och epsilon är 10^-15.
+
+-------------

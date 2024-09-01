@@ -1,11 +1,11 @@
 TODO: Självstudier på nackademinportalen - under Kurs -> Självstudier
-TODO: Gör programmeringsuppgifter från kapitel 4
-TODO: Skriv rent kortkommandon för IntelliJ
-TODO: Programmeringsuppgift 4.5 i boken - lär dig Math.cos() och dokumentera jämförelse av flyttal.
 
 
 
 
+Done: Programmeringsuppgift 4.5 i boken - lär dig Math.cos() och dokumentera jämförelse av flyttal.
+Done: Gör programmeringsuppgifter från kapitel 4
+Done: Skriv rent kortkommandon för IntelliJ
 Done: Gör Intellij Learn -> Välj Close Project, och gör intelliJ kursen inom IDEn.
 Done: Gör programmeringsuppgifter från kapitel 3
 Done: Gör grundläggande uppgifter från boken kapitel 1 & 2.
