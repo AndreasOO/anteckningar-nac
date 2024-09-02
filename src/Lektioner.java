@@ -12,8 +12,8 @@ import java.util.random.RandomGenerator;
 public class Lektioner {
 
     public static void main(String[] args) {
-        TaxesCalculator taxesCalculator  = new TaxesCalculator();
-        taxesCalculator.execute();
+//        TaxesCalculator taxesCalculator = new TaxesCalculator();
+//        taxesCalculator.execute();
 
 //        PhoneBillCalculator phoneBillCalculator = new PhoneBillCalculator();
 //        phoneBillCalculator.execute();
@@ -24,13 +24,9 @@ public class Lektioner {
 //        MathTestGrader mathTestGrader = new MathTestGrader();
 //        mathTestGrader.execute();
 
+        WindowCostCalculator wcc = new WindowCostCalculator();
+        wcc.execute();
 
-
-        Random rand = new Random();
-
-        System.out.println(rand.nextInt(0,100));
-
-        System.out.println(Math.random()*7);
 
 
 

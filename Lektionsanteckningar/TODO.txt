@@ -1,4 +1,10 @@
 TODO: Självstudier på nackademinportalen - under Kurs -> Självstudier
+TODO: Affärsmannaskap Gruppuppgift och Individuell examniationsuppgift - gör den i Word
+TODO: Examinationsuppgift Javautveckling G och VG fråga. - med try catch, reflektioner, skicka in som pdf och zip - fil ska innehålla namn
+
+
+<
+
 
 
 
