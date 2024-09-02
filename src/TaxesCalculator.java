@@ -22,11 +22,11 @@ public class TaxesCalculator {
     }
 
     private void calculateTaxesPaid() {
-        taxesPaid = (TAXES_PERCENTAGE/100.0)*userInputPrice;
+        taxesPaid = userInputPrice - (userInputPrice/((1.0 + TAXES_PERCENTAGE/100.0)));
     }
 
     private void calculatePriceWithoutTaxes() {
-        priceWithoutTaxes = userInputPrice-taxesPaid;
+        priceWithoutTaxes = userInputPrice/((1.0 + TAXES_PERCENTAGE/100.0));
     }
 
     private void printOutputToUser() {
