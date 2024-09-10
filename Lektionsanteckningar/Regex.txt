@@ -1,0 +1,20 @@
+Cheat sheet för Regex:
+
+(?i)[a-z] - letter case insensitive
+
+\\d{1} or  \\d - one digit
+
+[a-z]? - optional alphabetic character
+
+.*hej.* - finds words in string even if word is part of other word
+
+.*(hej|du|kan).* - find one of words in string even if word is part of other word
+
+[a-z\d_]{4,16} - validate username case-insensitive, alphabetic characters, digits, or underscore. 4-16 characters long
+
+\\b!+ - find exclamation marks after a word (even if words contains them)
+
+!+\\b - find exclamation marks before and inside a word up until end of word.
+
+\\d{4}|\\d{6} - validate pin code 4 or 6 digits
+

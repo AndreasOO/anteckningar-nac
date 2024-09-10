@@ -1,14 +1,11 @@
 TODO: Självstudier på nackademinportalen - under Kurs -> Självstudier
-TODO: Affärsmannaskap Gruppuppgift och Individuell examniationsuppgift - gör den i Word
-TODO: Examinationsuppgift Javautveckling G och VG fråga. - med try catch, reflektioner, skicka in som pdf och zip - fil ska innehålla namn
-
-
-<
 
 
 
 
 
+Done: Examinationsuppgift Javautveckling G och VG fråga. - med try catch, reflektioner, skicka in som pdf och zip - fil ska innehålla namn
+Done: Affärsmannaskap Gruppuppgift och Individuell examniationsuppgift - gör den i Word
 Done: Programmeringsuppgift 4.5 i boken - lär dig Math.cos() och dokumentera jämförelse av flyttal.
 Done: Gör programmeringsuppgifter från kapitel 4
 Done: Skriv rent kortkommandon för IntelliJ

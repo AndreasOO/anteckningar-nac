@@ -1,48 +1,35 @@
-import javax.swing.*;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.math.BigDecimal;
-import java.nio.charset.StandardCharsets;
-import java.util.Calendar;
-import java.util.Locale;
-import java.util.Random;
+import java.io.*;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.Scanner;
-import java.util.random.RandomGenerator;
 
 public class Lektioner {
 
+
     public static void main(String[] args) {
-//        TaxesCalculator taxesCalculator = new TaxesCalculator();
-//        taxesCalculator.execute();
 
-//        PhoneBillCalculator phoneBillCalculator = new PhoneBillCalculator();
-//        phoneBillCalculator.execute();
+        String[] books = {"book1", "book2", "book3"};
 
-//        GymTicketCalculator gtc = new GymTicketCalculator();
-//        gtc.execute();
+        String firstBook = books[0];
+        String lastBook = books[books.length-1];
 
-//        MathTestGrader mathTestGrader = new MathTestGrader();
-//        mathTestGrader.execute();
+        Arrays.sort(books);
 
-        WindowCostCalculator wcc = new WindowCostCalculator();
-        wcc.execute();
+        Arrays.stream(books).forEach(System.out::println);
 
+        System.out.println(books.length);
 
-
-
-
-
+        String[] booksPlusOne = new String[books.length + 1];
+        for (int i = 0; i < books.length; i++) {
+            booksPlusOne[i] = books[i];
+        }
+        booksPlusOne[booksPlusOne.length-1] = "book4";
+        Arrays.stream(booksPlusOne).forEach(System.out::println);
 
 
-
-
-
-
-
-
-
+        String[] booksCopy = Arrays.copyOf(books, books.length+1);
+        booksCopy[booksCopy.length-1] = "book5";
+        Arrays.stream(booksCopy).forEach(System.out::println);
 
     }
-
-
 }

@@ -27,7 +27,7 @@ public class WindowCostCalculator {
         applyRebate();
         applyRounding();
         formatOutput();
-        sendOutputToUser();
+        showOutputToUser();
     }
 
     private void getUserInput() {
@@ -95,7 +95,7 @@ public class WindowCostCalculator {
        outputToUser = sb.toString();
     }
 
-    private void sendOutputToUser() {
+    private void showOutputToUser() {
         JOptionPane.showMessageDialog(null, outputToUser);
     }
 }
