@@ -18,3 +18,34 @@ Cheat sheet för Regex:
 
 \\d{4}|\\d{6} - validate pin code 4 or 6 digits
 
+^(.+)(\\1)+$ - see if capture group one (\\1) captured from any charsequence (.+) occurs in a pattern to the end of the string
+--------
+Matcherklassen kan användas för att hitta index och ersätta med annat i en sträng.
+
+String = "test in action";
+Pattern pattern = Pattern.compile("[aeiou]");
+Matcher matcher = pattern.matcher(s);
+
+int index;
+System.out.println("Vowels index:");
+while (matcher.find()) {
+    index = matcher.start();
+    System.out.println(index);
+}
+
+StringBuilder sb = new StringBuilder();
+int index;
+System.out.println("Replacing vowels with their index in string");
+while (matcher.find()) {
+    index = matcher.start();
+    matcher.appendReplacement(sb, ""+index);
+}
+matcher.appendTail(sb); // appends rest of string that didnt get handled in replacement appending.
+
+--------------
+Example of look behind and look ahead in regex.
+
+Pattern.compile("(?<=password=)(.*?)(?=&|$)"); -
+
+?<=  // look behind - in this case it matches the characters behind "password="
+?=  // look ahead - in this case it matches the characters ahead up until it hits a & character or $ meaning end of string.

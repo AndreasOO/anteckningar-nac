@@ -1,35 +1,47 @@
 import java.io.*;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Scanner;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Lektioner {
 
+    private static int a;
+    public static void main(String[] args) throws ParseException {
 
-    public static void main(String[] args) {
+        String str = "a";
 
-        String[] books = {"book1", "book2", "book3"};
+        Matcher matcher;
 
-        String firstBook = books[0];
-        String lastBook = books[books.length-1];
+        StringBuilder sbStart = new StringBuilder(str.length());
+        StringBuilder sbEnd = new StringBuilder(str.length());
 
-        Arrays.sort(books);
+        for (int i = 0, j = str.length()-1; i < str.length(); i++, j--) {
+            sbStart.append(str.charAt(i));
+            sbEnd.insert(i,str.charAt(i));
 
-        Arrays.stream(books).forEach(System.out::println);
+            int totalIndexes = 0;
+            if (i < str.length()-1 && sbStart.toString().contentEquals(sbEnd)) {
+                matcher = Pattern.compile(sbStart.toString()).matcher(str);
+                while (matcher.find()) {
+                    System.out.println(matcher.group()+ " " + matcher.start() + " " + matcher.end());
+                    totalIndexes += matcher.end() - matcher.start();
 
-        System.out.println(books.length);
+                }
+                System.out.println(totalIndexes);
+                if (totalIndexes == str.length()) {
+                    System.out.println(true);
+                    System.exit(0);
+                }
+                totalIndexes = 0;
+            }
 
-        String[] booksPlusOne = new String[books.length + 1];
-        for (int i = 0; i < books.length; i++) {
-            booksPlusOne[i] = books[i];
+
         }
-        booksPlusOne[booksPlusOne.length-1] = "book4";
-        Arrays.stream(booksPlusOne).forEach(System.out::println);
 
-
-        String[] booksCopy = Arrays.copyOf(books, books.length+1);
-        booksCopy[booksCopy.length-1] = "book5";
-        Arrays.stream(booksCopy).forEach(System.out::println);
-
+        System.out.println(false);
+//        System.out.println(sbStart.toString());
+//        System.out.println(sbEnd.toString());
     }
 }

@@ -1,0 +1,7 @@
+Arrays
+
+Det går inte att sortera en array med Arrays.sort(arr) om det finns nullvärden i arrayen.
+
+int[] arr = {1,2,3,4};
+Arrays.toString(arr) // skriver ut arrayen. [1,2,3,4]
+int[] arr2 = Arrays.copyOf(arr, arr.length + 1) // kopierar array och returnerar den med plats för ett till element.
