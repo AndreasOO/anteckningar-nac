@@ -1,0 +1,46 @@
+Naturligt jämförbara objekt.
+
+Gör objekt naturligt jämförbara genom att implementera Comparable interfacen och ange klasssen som generisk typ.
+Definera sedan den abstrakta metoden compareTo(<T> o) och skriv in jämförelselogiken där.
+
+compareTo returnerar en int beroende på hur jämförelsen med andra objektet gick. 1 om större, -1 om mindre, 0 om lika.
+Exempel:
+
+public class Dice implements Comparable<Dice> {
+        public int compareTo(Dice dice) {
+        ... return -1;
+        ... return 1;
+        ... return 0;
+        }
+}
+
+Man kan även använda Comparable klass som ingår i en annan klass för jämförelse.
+Då måste både huvudklass och klassen som ingår i huvudklassen implementera Comparable.
+
+Exempel
+
+public class Roll implements Comparable<Roll> {
+        private static Dice dice1 = new Dice(); // klass som ingår i huvudklassen
+
+        public int compareTo(Dice dice2) {
+            return dice1.compareTo(dice2); // anropar Dice klassens compareTo som vi definerat ovan.
+        }
+}
+
+---------------------------
+
+Icke naturligt jämförbara objekt
+
+En klass kan eller bör inte alltid jämföra sig själv med andra. Då behöver vi skapa en hjälpklass
+som implementerar Comparator med den generiska typen som den ska jämföra.
+Hjälpklassen tar in båda objekten som argument och returnerar +1 och objekt1 är störst, -1 om det är minst, och 0 om lika.
+
+Exempel:
+
+public class DiceComparator implements Comparator<Dice> {
+        public int compare(Dice d1, Dice d2) {
+            ... return -1;
+            ... return 1;
+            ... return 0;
+        }
+}

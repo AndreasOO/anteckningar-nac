@@ -6,3 +6,17 @@ Exempel: Hur många gånger behöver 1 öre dubbleras innan det blir 10 000 000 
 
 ----------------------
 
+För att se om ett tal är en exponent av ett visst heltal kan du använda logaritmer.
+
+Exempel: Undersök om tal n är resultat av en exponentekvation med heltalet två som bas.
+
+Math.log(n)/Math.log(2) // om resultatet blir en double utan decimaler så är n resultat av exponentekvation med två som bas.
+
+Math.log(1024)/Math.log(2) // 12.0 - sant.
+
+Math.log(333)/Math.log(2) // 8.379378367071263 - falskt.
+
+NOTERA ATT DEN INTE HANTERAR STÖRRE ÄN LONG MED BRA NOG TRÄFFSÄKERHET
+
+---------------------
+
