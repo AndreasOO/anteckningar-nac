@@ -9,29 +9,27 @@ import java.util.stream.IntStream;
 
 
 public class Lektioner {
-
+    private static char ch;
     private static int a;
     public static void main(String[] args) {
 
-        int[] arr = {1,1,2,2,3,3,4,4};
 
-        int sum = 0;
-        Map<Integer,Integer> map = new HashMap<>();
+        Card card = new Card("Cloves", 2);
+        System.out.println(card.toString());
 
+        Deck deck = new Deck();
+        deck.printDeck();
+        deck.sortDeck();
 
-        for (int ele : arr) {
-            map.put(ele, map.get(ele) == null ? 1 : map.get(ele)+1);
-        }
-
-//        for (Integer ele : map.keySet()) {
-//            System.out.println(ele + "  " + map.get(ele));
-//
-//        }
-        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            System.out.println(entry.getKey() + "  " + entry.getValue());
-        }
+        deck.printDeck();
 
 
+        System.out.println("------");
+        deck.sortDeckWithComparator();
+        deck.printDeck();
+
+        deck.sortDeck();
+        deck.printDeck();
     }
 
 }
