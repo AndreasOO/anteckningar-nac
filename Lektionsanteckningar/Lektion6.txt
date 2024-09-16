@@ -5,3 +5,19 @@ Det går inte att sortera en array med Arrays.sort(arr) om det finns nullvärden
 int[] arr = {1,2,3,4};
 Arrays.toString(arr) // skriver ut arrayen. [1,2,3,4]
 int[] arr2 = Arrays.copyOf(arr, arr.length + 1) // kopierar array och returnerar den med plats för ett till element.
+
+
+----------
+
+Metoden summaryStatistics från en stream kan ge flera värden i samma operation. T.e.x max, min, average, sum, count.
+  List<Integer> list = new ArrayList<>();
+
+    list.add(5);
+    list.add(2);
+    list.add(12);
+    list.add(22);
+    list.add(25);
+    list.add(-5);
+    list.add(20);
+
+    IntSummaryStatistics stats = list.stream().mapToInt(x -> x).summaryStatistics();

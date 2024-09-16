@@ -27,7 +27,7 @@ public class Roll implements Comparable<Roll> {
         }
 }
 
----------------------------
+---------------------------------
 
 Icke naturligt jämförbara objekt
 
@@ -44,3 +44,5 @@ public class DiceComparator implements Comparator<Dice> {
             ... return 0;
         }
 }
+
+----------------------------------
