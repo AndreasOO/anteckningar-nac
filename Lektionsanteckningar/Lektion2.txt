@@ -58,16 +58,19 @@ Du kan enkelt runda av till x antal decimaler genom mönstret Math.round(decimal
            --> 112346.0 / 100000.0 = 1.12346
 
 När du sedan skriver ut decimaltalet så behöver du använda String.format("%f.x") där x är antal decimaltecken.
-       String.format("%.5f", d2)
+
+        String.format("%.5f", d2)
        --> d2 = 1.12346
        --> %.5f = "1.12346"
 
 Om fler decimaltecken skrivs i än vad flyttalet innehåller så ersätts de med 0.
+
        String.format("%.7f", d2)
        --> d2 = 1.12346
        --> %.7f = "1.1234600"
 
 Om färre decimaltecken skrivs i än vad flyttalet innehåller avrundas decimaltalet enligt Math.round().
+
        String.format("%.4f", d2)
        --> d2 = 1.12346
        --> %.4f = "1.1235"

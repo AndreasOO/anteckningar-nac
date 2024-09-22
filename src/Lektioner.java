@@ -1,4 +1,6 @@
 import java.io.*;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.*;
@@ -13,23 +15,11 @@ public class Lektioner {
     private static int a;
     public static void main(String[] args) {
 
+        int[] arr = {1,2};
 
-        Card card = new Card("Cloves", 2);
-        System.out.println(card.toString());
-
-        Deck deck = new Deck();
-        deck.printDeck();
-        deck.sortDeck();
-
-        deck.printDeck();
-
-
-        System.out.println("------");
-        deck.sortDeckWithComparator();
-        deck.printDeck();
-
-        deck.sortDeck();
-        deck.printDeck();
+        Arrays.copyOf(arr, arr.length);
+        double area = 54.2343;
+        double res = BigDecimal.valueOf(area).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 
 }

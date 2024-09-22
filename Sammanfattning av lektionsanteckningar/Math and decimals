@@ -1,0 +1,88 @@
+Du kan enkelt runda av till x antal decimaler genom mönstret Math.round(decimaltal*100)/100
+--> 100 blir rundning till två decimaler, lägg till fler nollor för mer precision.
+
+        double d1 = 1.123456;
+        double d2 = Math.round(d1*100000)/100000.0;
+           --> d1 = 1.123456
+           --> d1*100000 = 112345.6
+           --> Math.round(112345.6) = 112346.0
+           --> 112346.0 / 100000.0 = 1.12346
+
+När du sedan skriver ut decimaltalet så behöver du använda String.format("%f.x") där x är antal decimaltecken.
+
+        String.format("%.5f", d2)
+       --> d2 = 1.12346
+       --> %.5f = "1.12346"
+
+Om fler decimaltecken skrivs i än vad flyttalet innehåller så ersätts de med 0.
+
+       String.format("%.7f", d2)
+       --> d2 = 1.12346
+       --> %.7f = "1.1234600"
+
+Om färre decimaltecken skrivs i än vad flyttalet innehåller avrundas decimaltalet enligt Math.round().
+
+       String.format("%.4f", d2)
+       --> d2 = 1.12346
+       --> %.4f = "1.1235"
+
+------------------------------------------------
+
+För jämförelse av double tal så bör inte == användas direkt.
+
+Istället så räknar man ut differensen mellan talen och jämför differensen med epsilon, dvs den godtagbara avvikelsen.
+
+double a = 10.0
+double b = 9.9999999999 // felmarginal på 10^-10
+
+double epsilon = 0.000000001 // godtagbar avvikelse 10^-9;
+double diffAB = Math.abs(a-b); // generar 10^-10 (dvs 0.0000000001)
+
+boolean isEqual = diffAb < epsilon // 0.0000000001 < 0.000000001 - epsilon är ett decimalsteg större, dvs differensen har inte överskridit epsilons gräns för försumbar differens.
+
+Det går även att använda Double.compare(double a, double b) == 0. Default epsilon för denna metod är 10^-15
+
+boolean isEqual = Double.compare(a,b) // true eftersom felmarginal är på 10^-10 och epsilon är 10^-15.
+
+--------------------
+
+Man kan även ställa in lokal känslighet som argument i String.format.
+
+String.format(Locale.of("sv", "SE"), "%.2f", costPerMonth); // Kommer använda svensk standard för decimaltecken.
+
+
+-------------------
+
+Randomisering i Java
+
+Math.random() // genererar ett flyttal mellan 0.00 och 1.00
+(int) (Math.random()*100) // genererar en integer mellan 0 och 100 - notera parenteserna.
+Math.random är inte kryptografiskt säker.
+
+Random rand = new Random();
+rand.nextInt(100); genererar en integer mellan 0 och 100.
+Bättre kryptografisk säkerhet
+
+-------------------
+
+För att se hur många gånger ett tal N behöver dubbleras innan man når tal M så kan man använda logaritmer.
+
+Exempel: Hur många gånger behöver 1 öre dubbleras innan det blir 10 000 000 kr.
+
+(Math.log(10_000_000.0)-Math.log(0.01))/Math.log(2.0) --> 29.897352853986263
+
+----------------------
+
+För att se om ett tal är en exponent av ett visst heltal kan du använda logaritmer.
+
+Exempel: Undersök om tal n är resultat av en exponentekvation med heltalet två som bas.
+
+Math.log(n)/Math.log(2) // om resultatet blir en double utan decimaler så är n resultat av exponentekvation med två som bas.
+
+Math.log(1024)/Math.log(2) // 12.0 - sant.
+
+Math.log(333)/Math.log(2) // 8.379378367071263 - falskt.
+
+NOTERA ATT DEN INTE HANTERAR STÖRRE ÄN LONG MED BRA NOG TRÄFFSÄKERHET
+
+---------------------

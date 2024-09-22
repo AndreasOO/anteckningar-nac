@@ -1,0 +1,33 @@
+Om du vill läsa från en fil som inte använder ett standardformat (UTF-8 t.ex.) så behöver du wrappa strömmarna
+och explicit sätta standardformatet egnom InputStreamReader och FileInputStream. Detta eftersom FileReader förväntar sig ett standardformat.
+
+T.e.x
+
+BufferedReader br = new BufferedReader( new InputStreamReader( new FileInputStream("test.txt", "UTF-8")));
+
+BufferdWriter writer = new BufferedWriter( new OutputStreamWriter (FileOutputStream("test.txt", true), "UTF-8"))
+-----
+
+Generell struktur för ovan är följande:
+
+Reader reader = new Reader( new StreamReader ( new Stream("filnamn","standard format of file content")));
+
+Writer writer = new Writer( new StreamWriter ( new Stream("filnamn","standard format of file content")));
+
+----------------
+
+Exempel på try with resources med en BufferedReader:
+
+try (BufferedReader reader = new BufferedReader(new FileReader("Lektionsanteckningar/Lektion2.txt"))) {
+            String line = reader.readLine();
+
+            while (line != null) {
+                System.out.println(line);
+                line = reader.readLine();
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+---------------------

@@ -46,3 +46,24 @@ public class DiceComparator implements Comparator<Dice> {
 }
 
 ----------------------------------
+
+I Collections klassen så finns det en statisk metod sort(list, comp) som tar in en samling (List) och ett comparatorobjekt.
+Metoden sorterar den faktiskta samlingen som referensen pekar mot, dvs inte en kopia som returneras. Denna metod skiljer
+sig from stream().sorted(list, comp).collect(Arraylist::new) som returnerar en kopia.
+
+
+----------------------------------
+I Arraylist så finns det en metod subList(end, start) som returnerar en sublista av huvudlistan som anroped sker från.
+Du kan ändra eller ta bort element genom clear(). Det ändra själva huvudlistan också.
+
+Dynamisk bindning innebär att man överlagrar metoder i subklasser så att man kan anropa dem från en referens med ett
+objekt som ligger högre upp i hierarkin. Detta fungera eftersom vid metodanrop så är det klassen som bestämmer vilken
+metod som anropas, inte referensen.
+
+Objekt o = new Case(); // o är referensen och Case är klassen.
+
+Det är endast abstrakta klasser som får ha abstrakta klasser.
+
+Nyckelordet default används inom interfaces. Det gör att man kan definera metoden i interfacen och den implementeras
+by default i klassen som implementerar interfacen så länge den klassen inte redan har definerat en metod med samma
+metodsignatur.
